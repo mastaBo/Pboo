@@ -1,0 +1,22 @@
+<div id="page">
+	<div id="content">
+		<center><h1>New Photo entry</h1></center>
+		<div id="post_record">
+		<%= form_for @photo do |form| %>
+			<p align="left">
+				<%= form.label :name %>
+    			<%= form.text_field :name %>
+  			</p>
+  			<p align="left">
+    			<%= form.label :uri %>
+    			<%= form.text_field :uri %>
+  			</p>
+  			<p class='buttons'><%= form.submit 'Submit' %></p>
+		<% end %>
+  		</div>	
+    	
+<%= link_to 'Back', photos_path %>
+
+	</div>
+</div>
+

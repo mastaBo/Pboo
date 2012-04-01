@@ -1,0 +1,21 @@
+<div id="page">
+<div id="content">
+<center><h1>P-blog</h1></center>
+
+<% @photos.each do |photo| %>
+  <div id="post_record">
+    <p><h3><%=h photo.name %></h3></p>
+    <p><%=h photo.uri %></p>
+    <p><%= link_to 'Show', photo %> |
+    <%= link_to 'Edit', edit_photo_path(photo) %> |
+    <%= link_to 'Destroy', photo, :confirm => 'Are you sure?', :method => :delete %></p>
+  </div>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New photo', new_photo_path %>
+
+</div>
+</div>

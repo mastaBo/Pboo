@@ -2,7 +2,7 @@
 	<div id="content">
 		<center><h1>New Photo entry</h1></center>
 		<div id="post_record">
-		<%= form_for @photo do |form| %>
+		<%= form_for @photo, :url=> photos_path, :html => {:multipart => true} do |form| %> <!-- multipart = true is used to accept files with POST during form submit-->
 			<p align="left">
 				<%= form.label :name %>
     			<%= form.text_field :name %>
@@ -10,6 +10,10 @@
   			<p align="left">
     			<%= form.label :uri %>
     			<%= form.text_field :uri %>
+  			</p>
+  			<p align="left">
+    			<%= form.label :photo_file %>
+    			<%= form.file_field :uploaded_data %> <!--The name uploaded_data is arbitrary because it is used by asttachment_fu for data processing -->
   			</p>
   			<p class='buttons'><%= form.submit 'Submit' %></p>
 		<% end %>
